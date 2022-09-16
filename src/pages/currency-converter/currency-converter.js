@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from './currency-converter.module.css'
+import { countryList } from "../../utils/countryList";
 
 const Main = () => {
   const [convertPrice, setConvertPrice] = useState(100)
@@ -31,11 +32,19 @@ const Main = () => {
           </div>
         </div>
         <div className={styles.selectCountry}>
-          <select className={styles.remittanceCountry}>
-
+          <select className={styles.remittanceCountry} onChange={(e) => setSelectRemittanceCountry(e.target.value)}>
+            <option value="KRW" selected>KRW(한국/원)</option>
+            <option value="USD">USD(미국/달러)</option>
+            {countryList.map((country) => {
+              return <option value={country.split(0, 3)}>{country}</option>
+            })}
           </select>
-          <select className={styles.receptionCountry}>
-             
+          <select className={styles.receptionCountry} onChange={(e) => setSelectReceptionCountry(e.target.value)}>
+            <option value="KRW">KRW(한국/원)</option>
+            <option value="USD" selected>USD(미국/달러)</option>
+            {countryList.map((country) => {
+              return <option value={country.split(0, 3)}>{country}</option>
+            })}
           </select>
         </div>
         <div className={styles.transform_btn}>
