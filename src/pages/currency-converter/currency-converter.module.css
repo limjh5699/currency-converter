@@ -75,21 +75,14 @@
   margin-top: 15px;
 }
 
-.transform_btn input {
-  width: 300px;
-  height: 50px;
-  background-color: #2d2aff;
-  color: #fff;
-  font-size: 20px;
-  margin: 30px 0;
-  border: 0;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .outputPrice {
   font-size: 30px;
+  text-align: right;
   color: #2d2aff;
+}
+
+.transform_message {
+  margin-top: 20px;
 }
 
 .errorMessage {
